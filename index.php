@@ -38,7 +38,7 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="mycovid.php" class="nav-link">MYCovidSym</a></li>
 	          <li class="nav-item"><a href="services.php" class="nav-link">Services</a></li>
 	          <li class="nav-item"><a href="doctors.php" class="nav-link">Doctors</a></li>
 	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
@@ -216,138 +216,6 @@
           </div>
         </div>
       </div>
-      <div class="container-wrap mt-5">
-      	<div class="row d-flex no-gutters">
-      		<div class="col-md-6 img" style="background-image: url(images/about-2.jpg);">
-      		</div>
-      		<div class="col-md-6 d-flex">
-      			<div class="about-wrap">
-      				<div class="heading-section heading-section-white mb-5 ftco-animate">
-		            <h2 class="mb-2">CovidSym with a personal touch</h2>
-		            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-		          </div>
-      				<div class="list-services d-flex ftco-animate">
-      					<div class="icon d-flex justify-content-center align-items-center">
-      						<span class="icon-check2"></span>
-      					</div>
-      					<div class="text">
-	      					<h3>Well Experience Dentist</h3>
-	      					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-      					</div>
-      				</div>
-      				<div class="list-services d-flex ftco-animate">
-      					<div class="icon d-flex justify-content-center align-items-center">
-      						<span class="icon-check2"></span>
-      					</div>
-      					<div class="text">
-	      					<h3>High Technology Facilities</h3>
-	      					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-      					</div>
-      				</div>
-      				<div class="list-services d-flex ftco-animate">
-      					<div class="icon d-flex justify-content-center align-items-center">
-      						<span class="icon-check2"></span>
-      					</div>
-      					<div class="text">
-	      					<h3>Comfortable Clinics</h3>
-	      					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-      					</div>
-      				</div>
-      			</div>
-      		</div>
-      	</div>
-      </div>
-    </section>
-
-
-    <section class="ftco-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-3">Meet Our Experience Dentist</h2>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences</p>
-          </div>
-        </div>
-        <div class="row">
-        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_5.jpg);"></div>
-      				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Tom Smith</a></h3>
-      					<span class="position">Dentist</span>
-      					<div class="text">
-	        				<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
-	        				<ul class="ftco-social">
-			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-			            </ul>
-	        			</div>
-      				</div>
-        		</div>
-        	</div>
-        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_6.jpg);"></div>
-      				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Mark Wilson</a></h3>
-      					<span class="position">Dentist</span>
-      					<div class="text">
-	        				<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
-	        				<ul class="ftco-social">
-			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-			            </ul>
-	        			</div>
-      				</div>
-        		</div>
-        	</div>
-        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_7.jpg);"></div>
-      				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Patrick Jacobson</a></h3>
-      					<span class="position">Dentist</span>
-      					<div class="text">
-	        				<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
-	        				<ul class="ftco-social">
-			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-			            </ul>
-	        			</div>
-      				</div>
-        		</div>
-        	</div>
-        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_8.jpg);"></div>
-      				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Ivan Dorchsner</a></h3>
-      					<span class="position">System Analyst</span>
-      					<div class="text">
-	        				<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
-	        				<ul class="ftco-social">
-			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-			            </ul>
-	        			</div>
-      				</div>
-        		</div>
-        	</div>
-        </div>
-        <div class="row  mt-5 justify-conten-center">
-        	<div class="col-md-8 ftco-animate">
-        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi vero accusantium sunt sit aliquam ipsum molestias autem perferendis, incidunt cumque necessitatibus cum amet cupiditate, ut accusamus. Animi, quo. Laboriosam, laborum.</p>
-        	</div>
-        </div>
-      </div>
     </section>
 
     <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
@@ -398,45 +266,11 @@
 	      </div>
     	</div>
     </section>
-
-		<section class="ftco-gallery">
-    	<div class="container-wrap">
-    		<div class="row no-gutters">
-					<div class="col-md-3 ftco-animate">
-						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-2.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-        </div>
-    	</div>
-    </section>
-
-    
 		
     <!-- <div id="map"></div> -->
+	<section>
+		<div class='row'><br><br></div>
+	</section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
