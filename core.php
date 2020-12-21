@@ -11,6 +11,6 @@ if (!isset($_SESSION['loggedin'])) {
     include("login.php");
 }
 else 
-    echo "teste";
+    include("profile.php");
 
 ?>

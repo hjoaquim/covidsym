@@ -2,7 +2,10 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-// Change this to your connection info.
+
+$message_sucess = "Loggedin sucessfuly";
+$message_fail = "Error loggin in";
+
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
@@ -13,7 +16,9 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 
 if ( !isset($_POST['username'], $_POST['password']) ) {
 	// Could not get the data that should have been sent.
-	exit('Please fill both the username and password fields!');
+	echo "<script type='text/javascript'>alert('$message_fail');</script>";
+	header("Location: core.php");
+	exit();
 }
 
 $query = 'SELECT * FROM utl_utilizadores WHERE username = "'.$_POST['username'].'"';
@@ -31,16 +36,19 @@ if (mysqli_num_rows($result) > 0) {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $user[1];
 		$_SESSION['id'] = $user[0];
-		echo 'Welcome ' . $_SESSION['name'] . '!';
+		echo "<script type='text/javascript'>alert('$message_sucess');</script>";;
+		
 	} else {
 		// Incorrect password
-		echo 'Incorrect username and/or password!';
+		echo "<script type='text/javascript'>alert('$message_fail');</script>";
 	}
 } else {
 	// Incorrect username
-	echo 'Incorrect username and/or password!';
+	echo "<script type='text/javascript'>alert('$message_fail');</script>";
 }
+
+header("Location: core.php");
+exit();
 
 
 ?>
-
