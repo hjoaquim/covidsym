@@ -11,6 +11,5 @@ if (!isset($_SESSION['loggedin'])) {
     include("login.php");
 }
 else
-    header("Location: profile.php");
-    exit();
+    include("profile.php");
 ?>

@@ -47,7 +47,7 @@ if (mysqli_num_rows($result) > 0) {
 	//echo "<script type='text/javascript'>alert('$message_fail');</script>";
 }
 
-header("Location: core.php");
+header("Location: mycovid.php");
 exit();
 
 

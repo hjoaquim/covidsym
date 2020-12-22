@@ -25,9 +25,6 @@ if (mysqli_num_rows($result) > 0) {
 
 ?>
 
-<?php
-  include_once 'header.php';
-?>
 
 <!DOCTYPE html>
 <html>
@@ -64,6 +61,3 @@ if (mysqli_num_rows($result) > 0) {
 	</body>
 </html>
 
-<?php
-  include_once 'footer.php';
-?>
