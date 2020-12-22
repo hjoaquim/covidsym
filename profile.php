@@ -42,6 +42,7 @@ if (mysqli_num_rows($result) > 0) {
 		</nav>
 		<div class="content">
 			<h2>Profile Page</h2>
+			<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			<div>
 				<p>Your account details are below:</p>
 				<table>
@@ -51,11 +52,11 @@ if (mysqli_num_rows($result) > 0) {
 					</tr>
 					<tr>
 						<td>Nome:</td>
-						<td><?=$user[4]?></td>
+						<td><?=$user[3]?></td>
 					</tr>
 					<tr>
 						<td>Email:</td>
-						<td><?=$user[9]?></td>
+						<td><?=$user[8]?></td>
 					</tr>
 				</table>
 			</div>

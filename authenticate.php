@@ -36,15 +36,15 @@ if (mysqli_num_rows($result) > 0) {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $user[1];
 		$_SESSION['id'] = $user[0];
-		echo "<script type='text/javascript'>alert('$message_sucess');</script>";;
-		
+		//echo "<script type='text/javascript'>alert('$message_sucess');</script>";;
+
 	} else {
 		// Incorrect password
-		echo "<script type='text/javascript'>alert('$message_fail');</script>";
+		//echo "<script type='text/javascript'>alert('$message_fail');</script>";
 	}
 } else {
 	// Incorrect username
-	echo "<script type='text/javascript'>alert('$message_fail');</script>";
+	//echo "<script type='text/javascript'>alert('$message_fail');</script>";
 }
 
 header("Location: core.php");

@@ -10,7 +10,7 @@ if (session_status() == PHP_SESSION_NONE) {
 if (!isset($_SESSION['loggedin'])) {
     include("login.php");
 }
-else 
-    include("profile.php");
-
+else
+    header("Location: profile.php");
+    exit();
 ?>
