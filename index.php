@@ -67,7 +67,7 @@
 	                <div class="form-group">
 	                	<div class="icon"><span class="ion-ios-calendar"></span></div>
 	                  <input type="text" class="form-control appointment_date" placeholder="Date">
-	                </div>    
+	                </div>
 	              </div>
 	              <div class="col-sm-4">
 	                <div class="form-group">
@@ -82,7 +82,7 @@
 	                </div>
 	              </div>
 	            </div>
-	            
+
 	            <div class="form-group">
 	              <input type="submit" value="Make an Appointment" class="btn btn-primary">
 	            </div>
@@ -91,7 +91,7 @@
     		</div>
     	</div>
     </section>
-  
+
     <section class="ftco-section ftco-services">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-5">
@@ -110,7 +110,7 @@
                 <h3 class="heading">Teeth Whitening</h3>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
@@ -121,7 +121,7 @@
                 <h3 class="heading">Teeth Cleaning</h3>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
-            </div>    
+            </div>
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
@@ -132,7 +132,7 @@
                 <h3 class="heading">Quality Brackets</h3>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
@@ -143,7 +143,7 @@
                 <h3 class="heading">Modern Anesthetic</h3>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
-            </div>      
+            </div>
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@
 	      </div>
     	</div>
     </section>
-		
+
     <!-- <div id="map"></div> -->
 	<section>
 		<div class='row'><br><br></div>
