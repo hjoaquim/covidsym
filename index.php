@@ -8,8 +8,10 @@
   include_once 'header.php';
 ?>
 
+<!--
     <section class="ftco-intro">
     	<div class="container">
+			
     		<div class="row no-gutters">
     			<div class="col-md-3 color-1 p-4">
     				<h3 class="mb-4">Emergency Cases</h3>
@@ -90,7 +92,8 @@
     			</div>
     		</div>
     	</div>
-    </section>
+	</section>
+-->
 
     <section class="ftco-section ftco-services">
       <div class="container">
