@@ -1,4 +1,8 @@
-
+<?php
+  if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+  }
+?>
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">

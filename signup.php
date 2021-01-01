@@ -3,7 +3,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
@@ -29,13 +28,10 @@ $ctl_activo = 'S';
 $pw = password_hash($_POST['password'],PASSWORD_DEFAULT);
 $newDate = date("Y-m-d", strtotime($_POST['birthdate']));  
 
-echo "<SCRIPT>alert('$newDate');</SCRIPT>";
-
 if($_POST['gender'] == 'male')
     $genero = 'M';
 else
     $genero = 'F';
-
 
 $query = 'INSERT INTO utl_utilizadores(username, password, nome, morada, f_localidade, telemovel, email, dt_nascimento, nr_saude, nif, genero, f_tipo_utilizador, ctl_activo) VALUES("'.$_POST['username'].'", "'.$pw.'", "'.$_POST['name'].'", "'.$_POST['address'].'", '.$loc[0].', "'.$_POST['contact'].'", "'.$_POST['email'].'", "'.$newDate.'", '.$_POST['health-card-number'].', '.$_POST['nif'].', "'.$genero.'", '.$tp_user.', "'.$ctl_activo.'");';
 $result = @mysqli_query($con, $query);
@@ -45,7 +41,7 @@ if ($result == FALSE) {
     echo "<SCRIPT>alert('$message'); window.location.replace('mycovid.php');</SCRIPT>";
 }
 else{
-    $message = "Registered Sucessfully."
+    $message = "Registered Sucessfully.";
     echo "<SCRIPT>alert('$message'); window.location.replace('mycovid.php');</SCRIPT>";
 }
 //header("Location: mycovid.php");
