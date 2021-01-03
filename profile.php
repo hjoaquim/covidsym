@@ -33,7 +33,7 @@ $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error(
 $tipo = mysqli_fetch_row($result);
 
 $query = 'SELECT nome_distrito FROM loc_distritos';
-$result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
+$result_dist = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
 mysqli_close($con);
 
 ?>
@@ -80,22 +80,13 @@ mysqli_close($con);
 								<table>
 									<form action="change-user.php" method="post"  enctype="multipart/form-data">
 												<tr>
+													
 													<td>	
-														<div class="pricing-entry pb-5 text-center">
-															<div>
-																
-																<p><span class="price">User menu</span>
-															</div>
-															<ul>
-																<li>Diagnostic Services</li>
-																		<li>Professional Consultation</li>
-																		<li>Tooth Implants</li>
-																		<li>Surgical Extractions</li>
-																		<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
-															</ul>
-														</div>
+														<?php
+															include("user-menu.php");
+														?>
 													</td>
-
+													
 													
 													<td>
 													<div class="pricing-entry pb-5 text-center">
@@ -134,7 +125,7 @@ mysqli_close($con);
 																		<select name="district" id="district" style="width: 300px">
 																		<option><?=$dist[0]?></option>
 																		<?php
-																		while($row = mysqli_fetch_array($result)){
+																		while($row = mysqli_fetch_array($result_dist)){
 																			echo "<option>".$row['nome_distrito']."</option>";
 																		}
 																		?>

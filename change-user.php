@@ -42,12 +42,10 @@ if(empty($_POST['password'])) {
 
 $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
 
-echo $result
+mysqli_close($con);
 
-//mysqli_close($con);
-
-//header("Location: mycovid.php");
-//exit();
+header("Location: mycovid.php");
+exit();
 
 
 ?>
