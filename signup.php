@@ -36,6 +36,8 @@ else
 $query = 'INSERT INTO utl_utilizadores(username, password, nome, morada, f_localidade, telemovel, email, dt_nascimento, nr_saude, nif, genero, f_tipo_utilizador, ctl_activo) VALUES("'.$_POST['username'].'", "'.$pw.'", "'.$_POST['name'].'", "'.$_POST['address'].'", '.$loc[0].', "'.$_POST['contact'].'", "'.$_POST['email'].'", "'.$newDate.'", '.$_POST['health-card-number'].', '.$_POST['nif'].', "'.$genero.'", '.$tp_user.', "'.$ctl_activo.'");';
 $result = @mysqli_query($con, $query);
 
+mysqli_close($con);
+
 if ($result == FALSE) {
     $message = "Registation failed.";
     echo "<SCRIPT>alert('$message'); window.location.replace('mycovid.php');</SCRIPT>";
@@ -45,6 +47,7 @@ else{
     echo "<SCRIPT>alert('$message'); window.location.replace('mycovid.php');</SCRIPT>";
 }
 //header("Location: mycovid.php");
+
 exit();
 
 ?>
