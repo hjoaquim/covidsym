@@ -30,20 +30,11 @@
         		</div>
         	</div>
         	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
+        		<div class="staff" style="height:65%">
       				<div class="img mb-4" style="background-image: url(images/person_6.jpg);"></div>
       				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Mark Wilson</a></h3>
-      					<span class="position">Dentist</span>
-      					<div class="text">
-	        				<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
-	        				<ul class="ftco-social">
-			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-			            </ul>
-	        			</div>
+      					<h3>Henrique Joaquim</h3>
+						  <span class="position">Utente</span>
       				</div>
         		</div>
         	</div>

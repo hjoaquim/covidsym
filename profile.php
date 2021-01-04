@@ -90,7 +90,9 @@ mysqli_close($con);
 													
 													<td>
 													<div class="pricing-entry pb-5 text-center">
-															<img src="images/person_5.jpg"style="width:100px"></img>
+															<?php
+																echo '<img src="data:image/png;base64,'.base64_encode($user[4]).'" width=100px/>';
+															?>
 																<table>
 																	<tr>
 																		<td>Choose Image:</td>

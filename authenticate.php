@@ -36,6 +36,7 @@ if (mysqli_num_rows($result) > 0) {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $user[1];
 		$_SESSION['id'] = $user[0];
+		$_SESSION['usr_type'] = $user[13];
 		//echo "<script type='text/javascript'>alert('$message_sucess');</script>";;
 
 	} else {

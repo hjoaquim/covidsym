@@ -27,17 +27,28 @@ if($_POST['gender'] == 'male')
 else
     $genero = 'F';
 
-if(!empty($_POST['myimage'])){
+if($_FILES["myimage"]["name"] != ''){
     $imagename=$_FILES["myimage"]["name"]; 
     $imagetmp=addslashes (file_get_contents($_FILES['myimage']['tmp_name']));
 }
 
-
-if(empty($_POST['password'])) {
-    $query = 'UPDATE utl_utilizadores SET NOME="'.$_POST['name'].'", MORADA="'.$_POST['address'].'", F_LOCALIDADE='.$loc[0].', TELEMOVEL="'.$_POST['contact'].'", EMAIL="'.$_POST['email'].'", DT_NASCIMENTO="'.$newDate.'", NR_SAUDE='.$_POST['health-card-number'].', NIF='.$_POST['nif'].', GENERO="'.$genero.'" WHERE username="'.$_SESSION['name'].'"';
-}else{
+if(empty($_POST['password']) && $_FILES["myimage"]["name"] == '') {
+    //$query = 'UPDATE utl_utilizadores SET NOME="'.$_POST['name'].'", MORADA="'.$_POST['address'].'", F_LOCALIDADE='.$loc[0].', TELEMOVEL="'.$_POST['contact'].'", EMAIL="'.$_POST['email'].'", DT_NASCIMENTO="'.$newDate.'", NR_SAUDE='.$_POST['health-card-number'].', NIF='.$_POST['nif'].', GENERO="'.$genero.'" WHERE username="'.$_SESSION['name'].'"';
+    $query = "UPDATE utl_utilizadores SET NOME='".$_POST['name']."', MORADA='".$_POST["address"]."', F_LOCALIDADE='$loc[0]', TELEMOVEL='".$_POST["contact"]."', EMAIL='".$_POST['email']."', DT_NASCIMENTO='".$newDate."', NR_SAUDE='".$_POST["health-card-number"]."', NIF='".$_POST['nif']."', GENERO='".$genero."'  WHERE username='".$_SESSION["name"]."'";
+}
+else if(empty($_POST['password']) && $_FILES["myimage"]["name"] != ''){
+    $query = "UPDATE utl_utilizadores SET FOTO='$imagetmp', imgname='$imagename', NOME='".$_POST['name']."', MORADA='".$_POST["address"]."', F_LOCALIDADE='$loc[0]', TELEMOVEL='".$_POST["contact"]."', EMAIL='".$_POST['email']."', DT_NASCIMENTO='".$newDate."', NR_SAUDE='".$_POST["health-card-number"]."', NIF='".$_POST['nif']."', GENERO='".$genero."'  WHERE username='".$_SESSION["name"]."'";
+    //$query ="UPDATE utl_utilizadores SET FOTO='$imagetmp', imgname='$imagename'";
+}
+else if(!empty($_POST['password']) && $_FILES["myimage"]["name"] == ''){
     $pw = password_hash($_POST['password'],PASSWORD_DEFAULT);
-    $query = 'UPDATE utl_utilizadores SET password="'.$pw.'", NOME="'.$_POST['name'].'", MORADA="'.$_POST['address'].'", F_LOCALIDADE='.$loc[0].', TELEMOVEL="'.$_POST['contact'].'", EMAIL="'.$_POST['email'].'", DT_NASCIMENTO="'.$newDate.'", NR_SAUDE='.$_POST['health-card-number'].', NIF='.$_POST['nif'].', GENERO="'.$genero.'"  WHERE username="'.$_SESSION['name'].'"';
+    //$query = 'UPDATE utl_utilizadores SET password="'.$pw.'", NOME="'.$_POST['name'].'", MORADA="'.$_POST['address'].'", F_LOCALIDADE='.$loc[0].', TELEMOVEL="'.$_POST['contact'].'", EMAIL="'.$_POST['email'].'", DT_NASCIMENTO="'.$newDate.'", NR_SAUDE='.$_POST['health-card-number'].', NIF='.$_POST['nif'].', GENERO="'.$genero.'"  WHERE username="'.$_SESSION['name'].'"';
+    $query = "UPDATE utl_utilizadores SET password='".$pw."', NOME='".$_POST['name']."', MORADA='".$_POST["address"]."', F_LOCALIDADE='$loc[0]', TELEMOVEL='".$_POST["contact"]."', EMAIL='".$_POST['email']."', DT_NASCIMENTO='".$newDate."', NR_SAUDE='".$_POST["health-card-number"]."', NIF='".$_POST['nif']."', GENERO='".$genero."'  WHERE username='".$_SESSION["name"]."'";
+}
+else if(!empty($_POST['password']) && $_FILES["myimage"]["name"] != ''){
+    $pw = password_hash($_POST['password'],PASSWORD_DEFAULT);
+    //$query = 'UPDATE utl_utilizadores SET FOTO="`.$imagetmp.`", imgname="'.$imagename.'", password="'.$pw.'", NOME="'.$_POST['name'].'", MORADA="'.$_POST['address'].'", F_LOCALIDADE='.$loc[0].', TELEMOVEL="'.$_POST['contact'].'", EMAIL="'.$_POST['email'].'", DT_NASCIMENTO="'.$newDate.'", NR_SAUDE='.$_POST['health-card-number'].', NIF='.$_POST['nif'].', GENERO="'.$genero.'"  WHERE username="'.$_SESSION['name'].'"';
+    $query = "UPDATE utl_utilizadores SET FOTO='$imagetmp', imgname='$imagename',password='".$pw."', NOME='".$_POST['name']."', MORADA='".$_POST["address"]."', F_LOCALIDADE='$loc[0]', TELEMOVEL='".$_POST["contact"]."', EMAIL='".$_POST['email']."', DT_NASCIMENTO='".$newDate."', NR_SAUDE='".$_POST["health-card-number"]."', NIF='".$_POST['nif']."', GENERO='".$genero."'  WHERE username='".$_SESSION["name"]."'";
 }
 
 $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
@@ -46,6 +57,4 @@ mysqli_close($con);
 
 header("Location: mycovid.php");
 exit();
-
-
 ?>

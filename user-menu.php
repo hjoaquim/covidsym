@@ -18,9 +18,9 @@
                     <p><span class="price">User menu</span>
                 </div>
                 <ul>
-                    <li><a href="#">List users</a></li>
-                    <li><a href="#">Register user</a></li>
-                    <li><a href="#">Search user</a></li>
+                    <li><a href="admin-functionalities.php?op=1">List users</a></li>
+                    <li><a href="admin-functionalities.php?op=2">Register user</a></li>
+                    <li><a href="admin-functionalities.php?op=3">Search user</a></li>
                     <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>
             </div>'
