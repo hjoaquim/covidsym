@@ -16,13 +16,6 @@
   mysqli_close($con);
 ?>
 
-
-
-
-
-
-
-
 <head>
 <link href="css/css_login.css" rel="stylesheet" type="text/css">
 </head>
@@ -181,11 +174,11 @@
 
                   </table>
 
+                  <input type="hidden" value="1" name="op">
+
               </form>
           	</div>
         	</p>
     		</div>
       </div>
-    <!-- </div> -->
 	</div>
-<!-- </div> -->

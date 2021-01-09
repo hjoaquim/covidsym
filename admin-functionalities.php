@@ -23,7 +23,7 @@
             break;
 
         case 2:
-            echo "case 2";
+            register_user($con);
             break;
 
         case 3:
@@ -42,7 +42,18 @@ function list_users($con){
     $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
 
     echo '<section class="ftco-section">';
-    echo "<div class='row'>";
+
+    echo ('
+	<div class="container">
+		<div class="row justify-content-center mb-5 pb-5">
+		<div class="col-md-7 text-center heading-section ftco-animate">
+		  <h2 class="mb-3">Meet Our Users</h2>
+		  <p>This view is admin only</p>
+		</div>
+	  </div>
+	');
+	
+	echo "<div class='row'>";
     
     while($row = mysqli_fetch_array($result)){
         echo ('
@@ -50,7 +61,7 @@ function list_users($con){
             <div class="staff" style="height:95%">
                 <div class="img mb-4" style="background-image: url(data:image/png;base64,'.base64_encode($row["foto"]).');"></div>
                     <div class="info text-center">
-                        <h3>'.$row["nome"].'</h3>
+                        <a href="admin-functionalities.php?search='.$row["username"].'&op=3"> <h3>'.$row["nome"].'</h3> </a>
                         <span class="position">ID: '.$row["id"].'</span>
                         <span class="position">Username: '.$row["username"].'</span>
                         <span class="position">'.$row["desc_utl"].'</span>
@@ -254,6 +265,154 @@ function search_user($con){
     echo '</section>';
 }
 
+function register_user($con){
+    echo('
+    <section class="ftco-section">
+    <div class="container">
+    <div class="row d-md-flex">
+
+    <link href="css/css_login.css" rel="stylesheet" type="text/css">
+
+    <div class="row">
+
+    <div class="col-md-12 nav-link-wrap mb-5">
+        <div class="nav ftco-animate nav-pills fadeInUp ftco-animated" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active show" id="login-tab" data-toggle="pill" href="#login" role="tab" aria-controls="login" aria-selected="true">Register user</a>
+    </div>
+    </div>
+
+  <div class="tab-content ftco-animate fadeInUp ftco-animated" id="v-pills-tabContent">
+
+      <div class="tab-pane fade active show" id="login" role="tabpanel" aria-labelledby="login-tab">
+        <div>
+
+        <form action="signup.php" method="post">
+            <table>
+
+              <tbody><tr>
+                  <td>
+                    <label for="username">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                    </label>
+                    <input type="text" name="username" placeholder="Username" id="username" required="">
+                  </td>
+                  <td>
+                    <label for="password">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    </label>
+                    <input type="password" name="password" placeholder="Password" id="password" required="">
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="name">
+                      <i class="fas fa-user" aria-hidden="true"></i>
+                    </label>
+                    <input type="text" name="name" placeholder="Name" id="name" required="">
+                  </td>
+                  <td>
+                    <label for="address">
+                      <i class="fas fa-home" aria-hidden="true"></i>
+                    </label>
+                    <input type="text" name="address" placeholder="Address" id="address" required="">
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="district">
+                    <i class="fas fa-map" aria-hidden="true"></i>
+                    </label>
+                    <select name="district" id="district" required="">
+                    <option>Aveiro</option><option>Beja</option><option>Braga</option><option>Bragança</option><option>Castelo Branco</option><option>Coimbra</option><option>Évora</option><option>Faro</option><option>Guarda</option><option>Leiria</option><option>Lisboa</option><option>Portalegre</option><option>Porto</option><option>Santarém</option><option>Setúbal</option><option>Viana do Castelo</option><option>Vila Real</option><option>Viseu</option><option>Ilha da Madeira</option><option>Ilha de Porto Santo</option><option>Ilha de Santa Maria</option><option>Ilha de São Miguel</option><option>Ilha Terceira</option><option>Ilha da Graciosa</option><option>Ilha de São Jorge</option><option>Ilha do Pico</option><option>Ilha do Faial</option><option>Ilha das Flores</option><option>Ilha do Corvo</option>                        </select>
+                  </td>
+
+                  <td>
+                    <label for="contact">
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                    </label>
+                    <input type="tel" name="contact" placeholder="Contact" pattern="[0-9]{9}" id="contact" required="">
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="email">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </label>
+                    <input type="email" name="email" placeholder="Email" id="email" required="">
+                  </td>
+
+                  <td>
+                    <label for="birthdate">
+                    <i class="fas fa-calendar" aria-hidden="true"></i>
+                    </label>
+                    <input type="date" name="birthdate" placeholder="Birthdate" id="birthdate" required="">
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="health-card-number">
+                    <i class="fas fa-clinic-medical" aria-hidden="true"></i>
+                    </label>
+                    <input type="number" name="health-card-number" placeholder="Health card number" id="health-card-number" required="">
+                  </td>
+
+                  <td>
+                    <label for="nif">
+                    <i class="fas fa-id-card" aria-hidden="true"></i>
+                    </label>
+                    <input type="number" name="nif" placeholder="NIF" id="nif" required="">
+                  </td>
+                
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="gender">
+                    <i class="fas fa-venus-mars" aria-hidden="true"></i>
+                    </label>
+                    <select name="gender" id="gender" required="">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                
+                  </td>
+
+                  <td>
+                    <label for="utl_type">
+                    <i class="fas fa-users-cog" aria-hidden="true"></i>
+                    <select name="tipo_utl" id="tipo_utl" required="">
+                        <option value="1">admin</option>
+                        <option value="2">Investigador</option>
+                        <option value="3">Médico</option>
+                        <option value="4">Utente</option>
+                    </select>
+                  </td>
+                    
+                </tr>
+
+                <tr>
+                  <td> <input type="submit" value="Submit"> </td><td>
+                </td></tr><tr>
+
+              </tr></tbody></table>
+
+              <input type="hidden" value="2" name="op">
+
+          </form>
+          
+        </div>
+      </div>
+ 
+    </div>
+    </div>
+    </div>
+    </section>
+    ');
+}
 
 
 ?>

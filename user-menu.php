@@ -11,7 +11,7 @@
 
     mysqli_close($con);
 
-    if($tipo_utl[0] != 4){
+    if($tipo_utl[0] == 1){
         echo (
             '<div class="pricing-entry pb-5 text-center">
                 <div>
@@ -26,14 +26,29 @@
             </div>'
         );
     }
-    else{
+    else if($tipo_utl[0] == 3){
         echo (
             '<div class="pricing-entry pb-5 text-center">
                 <div>
                     <p><span class="price">User menu</span>
                 </div>
                 <ul>
+                    <li><a href="">Next appointment</a></li>
+                    <li><a href="">Appointment history</a></li>
                     <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                </ul>
+            </div>'
+        );
+    }
+    else if($tipo_utl[0] == 4){
+        echo (
+            '<div class="pricing-entry pb-5 text-center">
+                <div>
+                    <p><span class="price">User menu</span>
+                </div>
+                <ul>
+                <li><a href="">Appointment history</a></li>
+                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>
             </div>'
         );

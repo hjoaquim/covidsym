@@ -23,7 +23,17 @@ $qr_loc = 'SELECT COD_DISTRITO FROM LOC_DISTRITOS WHERE LOC_DISTRITOS.NOME_DISTR
 $res_loc = mysqli_query($con, $qr_loc) or die('The query failed: ' . mysqli_error($con));
 $loc = mysqli_fetch_row($res_loc);
 
-$tp_user = 4;
+switch($_POST["op"]){
+
+    case 1:
+        $tp_user = 4;
+        break;
+    
+    case 2:
+        $tp_user = $_POST["tipo_utl"];
+
+}
+
 $ctl_activo = 'S';
 $pw = password_hash($_POST['password'],PASSWORD_DEFAULT);
 $newDate = date("Y-m-d", strtotime($_POST['birthdate']));  

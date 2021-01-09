@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link href="css/css_login.css" rel="stylesheet" type="text/css"> -->
+    <link href="css/css_login.css" rel="stylesheet" type="text/css">
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
@@ -69,10 +69,7 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="mycovid.php" class="nav-link">MYCovidSym</a></li>
-	          <li class="nav-item"><a href="services.php" class="nav-link">Services</a></li>
 	          <li class="nav-item"><a href="doctors.php" class="nav-link">Doctors</a></li>
-
-	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
 
 
             <?php
