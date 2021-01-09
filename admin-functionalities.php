@@ -38,24 +38,8 @@
 // functions here
 function list_users($con){
 
-    $query = "select a.id, a.username, a.nome, a.foto, b.desc_utl from utl_utilizadores a inner join utl_tipos_utilizadores b on a.F_TIPO_UTILIZADOR=b.ID";
+    $query = "select a.id, a.username, a.nome, a.foto, b.desc_utl from utl_utilizadores a inner join utl_tipos_utilizadores b on a.F_TIPO_UTILIZADOR=b.ID where a.ctl_activo='S'";
     $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
-
-    /*
-    $number=mysqli_num_rows($result);
-
-    if(isset($_GET['pageSize']))
-        $pageSize=$_GET['pageSize']; 			//numero de pesquisas por pagina
-    else
-        $pageSize=8;
-    
-    if(isset($_GET['pageNumber']))
-        $pageNumber=$_GET['pageNumber'];		//numero da pagina de pesquisa
-    else
-        $pageNumber=1;
-
-    $nPages=ceil($number/$pageSize);
-    */
 
     echo '<section class="ftco-section">';
     echo "<div class='row'>";
@@ -75,32 +59,7 @@ function list_users($con){
         </div>
         ');
     }
-    
-/*
-    for($i=1 ; $i <= $number ; $i++){
 
-        if($row = mysqli_fetch_array($result)){
-            echo ('
-            <div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
-                <div class="staff" style="height:95%">
-                    <div class="img mb-4" style="background-image: url(data:image/png;base64,'.base64_encode($row["foto"]).');"></div>
-                        <div class="info text-center">
-                            <h3>'.$row["nome"].'</h3>
-                            <span class="position">ID: '.$row["id"].'</span>
-                            <span class="position">Username: '.$row["username"].'</span>
-                            <span class="position">'.$row["desc_utl"].'</span>
-                        </div>
-                </div>
-            </div>
-            ');
-        }
-
-    }
-
-    for ($j = 1; $j <= $nPages; $j++) 
-        echo '<a href=admin-functionalities.php?op=1&pageNumber='.$j.'&pageSize='.$pageSize.'>'. $j.'</a></td>';
-
-*/
     echo "</div>";
     echo '</section>';
 
@@ -194,7 +153,7 @@ function search_user($con){
                                                         <td>Distrito:</td>
                                                         <td>
                                                         <select name="district" id="district" style="width: 300px">
-                                                        <option><?=$dist[0]?></option>
+                                                        <option>'.$dist[0].'</option>
                                                         '.$optionString.'
                                                         </select>
                                                         </td>
@@ -243,7 +202,10 @@ function search_user($con){
                                                         <td><'.$tipo[0].'</td>
                                                     </tr>
 
-                                                    <tr><td><td> <input type="submit" value="Save changes"> <td></td></tr>
+                                                    <input type="hidden" name="op" value="2">
+                                                    <input type="hidden" name="username_to_change" value="'.$user[1].'">
+
+                                                    <tr><td><td> <input type="submit" value="Save changes"> </td></td></tr>
 
                                                 </table>
                                             </div>
@@ -254,6 +216,29 @@ function search_user($con){
                 </table>
 
             ');
+
+            if($user[15]=='S'){
+                echo ('
+                    <form action="change-user.php" method="post">
+                        
+                        <input type="hidden" name="op" value="3">
+                        <input type="hidden" name="username_to_change" value="'.$user[1].'">
+                        <tr><td><td> <input type="submit" value="Deactivate user"> </td></td><tr>
+                    
+                    </form>
+                ');
+            }
+            else{
+                echo ('
+                <form action="change-user.php" method="post">
+                    
+                    <input type="hidden" name="op" value="4">
+                    <input type="hidden" name="username_to_change" value="'.$user[1].'">
+                    <tr><td><td> <input type="submit" value="Activate user"> </td></td><tr>
+                
+                </form>
+            ');
+            }
 
         }
         else{
@@ -272,4 +257,3 @@ function search_user($con){
 
 
 ?>
-

@@ -178,6 +178,8 @@ mysqli_close($con);
 																		<td><?=$tipo[0]?></td>
 																	</tr>
 
+																	<input type="hidden" name="op" value="1">
+
 																	<tr><td><td> <input type="submit" value="Save changes"> <td></td></tr>
 
 																</table>
