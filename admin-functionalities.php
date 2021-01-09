@@ -210,7 +210,7 @@ function search_user($con){
                                                     </tr>
                                                     <tr>
                                                         <td>Tipo de utilizador:</td>
-                                                        <td><'.$tipo[0].'</td>
+                                                        <td>'.$tipo[0].'</td>
                                                     </tr>
 
                                                     <input type="hidden" name="op" value="2">

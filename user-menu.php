@@ -47,6 +47,7 @@
                     <p><span class="price">User menu</span>
                 </div>
                 <ul>
+                <li><a href="appointments.php">Make an appointment</a></li>
                 <li><a href="">Appointment history</a></li>
                 <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>

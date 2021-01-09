@@ -74,7 +74,7 @@
 
             <?php
               if(isset($tipo) && $tipo[0]==4)
-                echo '<li class="nav-item cta"><a href="contact.php" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li>';
+                echo '<li class="nav-item cta"><a href="appointments.php" class="nav-link"><span>Make an Appointment</span></a></li>';
             ?>
 
             </ul>
