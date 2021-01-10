@@ -1,4 +1,9 @@
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+    
+
     $DATABASE_HOST = 'localhost';
     $DATABASE_USER = 'root';
     $DATABASE_PASS = '';
@@ -26,6 +31,19 @@
             </div>'
         );
     }
+    else if($tipo_utl[0] == 2){
+        echo (
+            '<div class="pricing-entry pb-5 text-center">
+                <div>
+                    <p><span class="price">User menu</span>
+                </div>
+                <ul>
+                    <li><a href="graphs.php">Graphs</a></li>
+                    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                </ul>
+            </div>'
+        );
+    }
     else if($tipo_utl[0] == 3){
         echo (
             '<div class="pricing-entry pb-5 text-center">
@@ -34,7 +52,7 @@
                 </div>
                 <ul>
                     <li><a href="next-app.php">Next appointment</a></li>
-                    <li><a href="">Appointment history</a></li>
+                    <li><a href="app-history.php">Appointment history</a></li>
                     <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>
             </div>'
@@ -48,7 +66,7 @@
                 </div>
                 <ul>
                 <li><a href="appointments.php">Make an appointment</a></li>
-                <li><a href="">Appointment history</a></li>
+                <li><a href="app-history.php">Appointment history</a></li>
                 <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>
             </div>'

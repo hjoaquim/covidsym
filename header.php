@@ -2,22 +2,6 @@
   if (session_status() == PHP_SESSION_NONE) {
   session_start();
   }
-
-  if(isset($_SESSION['loggedin'], $_SESSION['id'])){
-
-    $DATABASE_HOST = 'localhost';
-    $DATABASE_USER = 'root';
-    $DATABASE_PASS = '';
-    $DATABASE_NAME = 'sim';
-  
-    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME) or die('Failed to connect to MySQL: ' . mysqli_error($connect));
-    $query = 'SELECT F_TIPO_UTILIZADOR FROM UTL_UTILIZADORES WHERE ID='.$_SESSION['id'].';';
-    $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
-    $tipo = mysqli_fetch_row($result);
-
-    mysqli_close($con);
-  }
-
 ?>
 
 <!DOCTYPE html>
@@ -67,15 +51,20 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="updates.php" class="nav-link">Covid-19 Updates</a></li>
 	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="mycovid.php" class="nav-link">MYCovidSym</a></li>
 	          <li class="nav-item"><a href="doctors.php" class="nav-link">Doctors</a></li>
 
 
             <?php
-              if(isset($tipo) && $tipo[0]==4)
+              if(isset($_SESSION['loggedin']))
+                echo '<li class="nav-item"><a href="mycovid.php" class="nav-link">Logged as: '.$_SESSION['name'].'</a></li>';
+              if(isset($_SESSION['usr_type']) && $_SESSION['usr_type']==4)
                 echo '<li class="nav-item cta"><a href="appointments.php" class="nav-link"><span>Make an Appointment</span></a></li>';
             ?>
+
+
 
             </ul>
 	      </div>

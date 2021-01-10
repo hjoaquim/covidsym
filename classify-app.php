@@ -145,7 +145,8 @@
     $DATABASE_NAME = 'sim';
     // Try and connect using the info above.
     $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME) or die('Failed to connect to MySQL: ' . mysqli_error($connect));
-    $query = "INSERT INTO `diag_diagnostico`(`F_CONSULTA`, `age`, `gender`, `body temperature`, `Dry Cough`, `sore throat`, `weakness`, `breathing problem`, `drowsiness`, `pain in chest`, `travel history to infected countries`, `diabetes`, `heart disease`, `lung disease`, `stroke or reduced immunity`, `symptoms progressed`, `high blood pressue`, `kidney disease`, `change in appetide`, `Loss of sense of smell`, `Corona result`) VALUES (".$id_consulta.",".$age.",".$temp.",".$gender.",".$cough.",".$cough.",".$weakness.",".$breathing.",".$drowsiness.",".$chest.",".$travel.",".$diabetes.", ".$heart.",".$lung.",".$immunity.",".$progressed.",".$blood.",".$kidney.",".$appetide.", ".$smell.", ".$class.")";
+    $query = "INSERT INTO `diag_diagnostico`(`F_CONSULTA`, `age`, `gender`, `body temperature`, `Dry Cough`, `sore throat`, `weakness`, `breathing problem`, `drowsiness`, `pain in chest`, `travel history to infected countries`, `diabetes`, `heart disease`, `lung disease`, `stroke or reduced immunity`, `symptoms progressed`, `high blood pressue`, `kidney disease`, `change in appetide`, `Loss of sense of smell`, `Corona result`) 
+    VALUES (".$id_consulta.",".$age.",".$gender.",".$temp.",".$cough.",".$cough.",".$weakness.",".$breathing.",".$drowsiness.",".$chest.",".$travel.",".$diabetes.", ".$heart.",".$lung.",".$immunity.",".$progressed.",".$blood.",".$kidney.",".$appetide.", ".$smell.", ".$class.")";
     $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
     //$consulta = mysqli_fetch_row($result_consulta);
     mysqli_close($con);

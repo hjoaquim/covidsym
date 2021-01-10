@@ -2,138 +2,62 @@
   if (session_status() == PHP_SESSION_NONE) {
     session_start();
   }
-?>
 
-<?php
   include_once 'header.php';
-?>
 
-<!--
-    <section class="ftco-intro">
-    	<div class="container">
-			
-    		<div class="row no-gutters">
-    			<div class="col-md-3 color-1 p-4">
-    				<h3 class="mb-4">Emergency Cases</h3>
-    				<p>A small river named Duden flows by their place and supplies</p>
-    				<span class="phone-number">+ (123) 456 7890</span>
-    			</div>
-    			<div class="col-md-3 color-2 p-4">
-    				<h3 class="mb-4">Opening Hours</h3>
-    				<p class="openinghours d-flex">
-    					<span>Monday - Friday</span>
-    					<span>8:00 - 19:00</span>
-    				</p>
-    				<p class="openinghours d-flex">
-    					<span>Saturday</span>
-    					<span>10:00 - 17:00</span>
-    				</p>
-    				<p class="openinghours d-flex">
-    					<span>Sunday</span>
-    					<span>10:00 - 16:00</span>
-    				</p>
-    			</div>
-    			<div class="col-md-6 color-3 p-4">
-    				<h3 class="mb-2">Make an Appointment</h3>
-    				<form action="#" class="appointment-form">
-	            <div class="row">
-	            	<div class="col-sm-4">
-	                <div class="form-group">
-			              <div class="select-wrap">
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                      	<option value="">Department</option>
-                        <option value="">Teeth Whitening</option>
-                        <option value="">Teeth CLeaning</option>
-                        <option value="">Quality Brackets</option>
-                        <option value="">Modern Anesthetic</option>
-                      </select>
-                    </div>
-			            </div>
-	              </div>
-	              <div class="col-sm-4">
-	                <div class="form-group">
-	                	<div class="icon"><span class="icon-user"></span></div>
-			              <input type="text" class="form-control" id="appointment_name" placeholder="Name">
-			            </div>
-	              </div>
-	              <div class="col-sm-4">
-	                <div class="form-group">
-	                	<div class="icon"><span class="icon-paper-plane"></span></div>
-			              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
-			            </div>
-	              </div>
-	            </div>
-	            <div class="row">
-	              <div class="col-sm-4">
-	                <div class="form-group">
-	                	<div class="icon"><span class="ion-ios-calendar"></span></div>
-	                  <input type="text" class="form-control appointment_date" placeholder="Date">
-	                </div>
-	              </div>
-	              <div class="col-sm-4">
-	                <div class="form-group">
-	                	<div class="icon"><span class="ion-ios-clock"></span></div>
-	                  <input type="text" class="form-control appointment_time" placeholder="Time">
-	                </div>
-	              </div>
-	              <div class="col-sm-4">
-	                <div class="form-group">
-	                	<div class="icon"><span class="icon-phone2"></span></div>
-	                  <input type="text" class="form-control" id="phone" placeholder="Phone">
-	                </div>
-	              </div>
-	            </div>
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'root';
+  $DATABASE_PASS = '';
+  $DATABASE_NAME = 'sim';
 
-	            <div class="form-group">
-	              <input type="submit" value="Make an Appointment" class="btn btn-primary">
-	            </div>
-	          </form>
-    			</div>
-    		</div>
-    	</div>
-	</section>
--->
+  $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME) or die('Failed to connect to MySQL: ' . mysqli_error($connect));
+  $query = 'SELECT count(*) FROM UTL_UTILIZADORES';
+  $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
+  $n_users = mysqli_fetch_row($result);~
 
+  $query = 'SELECT count(*) FROM UTL_UTILIZADORES where f_tipo_utilizador=3';
+  $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
+  $n_medicos = mysqli_fetch_row($result);
+
+  $query = 'SELECT count(*) FROM diag_consulta';
+  $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
+  $n_consultas = mysqli_fetch_row($result);
+
+  
+  $query = 'SELECT count(*) FROM diag_consulta where prescricao=1';
+  $result = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
+  $n_presc = mysqli_fetch_row($result);
+
+  mysqli_close($con);
+
+
+  echo('
     <section class="ftco-section ftco-services">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-2">Our Service Keeps you Smile</h2>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <h2 class="mb-2">Our Service</h2>
+            <p>
+			The COVID-19 pandemic that we experience today has as a characteristic
+			easily contagious and difficult to diagnose as it presents symptoms identical to those of a
+			common flu or constipation. Since testing is the most common and reliable diagnostic technique
+			, and that the country has limited testing capacity, it is important to have
+			diagnosis support that assesses the risk of being in the presence of a patient with
+			COVID-19 and screen cases that are least likely to give priority
+			testing of the highest risk cases.
+			</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-tooth-1"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Teeth Whitening</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">         
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
               <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-dental-care"></span>
+					<span class="flaticon-dentist"></span>
               </div>
               <div class="media-body p-2 mt-3">
-                <h3 class="heading">Teeth Cleaning</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-tooth-with-braces"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Quality Brackets</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Diagnosis</h3>
               </div>
             </div>
           </div>
@@ -143,10 +67,11 @@
             		<span class="flaticon-anesthesia"></span>
               </div>
               <div class="media-body p-2 mt-3">
-                <h3 class="heading">Modern Anesthetic</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Prescription</h3>
               </div>
             </div>
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
           </div>
         </div>
       </div>
@@ -157,8 +82,8 @@
     		<div class="row d-flex align-items-center">
     			<div class="col-md-3 aside-stretch py-5">
     				<div class=" heading-section heading-section-white ftco-animate pr-md-4">
-	            <h2 class="mb-3">Achievements</h2>
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+				<h2 class="mb-3">Achievements</h2>
+				<p>Some data about this web application>
 	          </div>
     			</div>
     			<div class="col-md-9 py-5 pl-md-5">
@@ -166,32 +91,32 @@
 		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18">
 		              <div class="text">
-		                <strong class="number" data-number="14">0</strong>
-		                <span>Years of Experience</span>
+		                <strong class="number" data-number="'.$n_users[0].'">0</strong>
+		                <span>Users</span>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18">
 		              <div class="text">
-		                <strong class="number" data-number="4500">0</strong>
-		                <span>Qualified Dentist</span>
+		                <strong class="number" data-number="'.$n_medicos[0].'">0</strong>
+		                <span>Experienced doctors</span>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18">
 		              <div class="text">
-		                <strong class="number" data-number="4200">0</strong>
-		                <span>Happy Smiling Customer</span>
+		                <strong class="number" data-number="'.$n_consultas[0].'">0</strong>
+		                <span>Appointments</span>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18">
 		              <div class="text">
-		                <strong class="number" data-number="320">0</strong>
-		                <span>Patients Per Year</span>
+		                <strong class="number" data-number="'.$n_presc[0].'">0</strong>
+		                <span>Prescriptions</span>
 		              </div>
 		            </div>
 		          </div>
@@ -200,12 +125,8 @@
 	      </div>
     	</div>
     </section>
+  ');
 
-    <!-- <div id="map"></div> -->
-	<section>
-		<div class='row'><br><br></div>
-	</section>
 
-<?php
   include_once 'footer.php';
 ?>

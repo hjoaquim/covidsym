@@ -252,18 +252,4 @@
 
     include_once 'footer.php';
 
-/*
- <table border: 1px solid black;>
-            <tr>
-
-                <td>
-                    <table>
-                        <th>Appointment info</th>
-                    </table>
-                </td>
-
-            </tr>
-        </table>
-*/
-
 ?>
