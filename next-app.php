@@ -115,23 +115,23 @@
 
                     <td>
                         <div class="pricing-entry pb-5 text-center">
-                            <form action="finish-app.php" method="post">
+                            <form action="classify-app.php" method="post">
                                 <table>
                                     
                                     <tr>
                                         <td><label for="age">Age</label><br></td>
-                                        <td><input type="number" id="age" name="age"></td>
+                                        <td><input type="number" id="age" name="age" required></td>
                                     </tr>
 
                                     <tr>
                                         <td><label for="temp">Body Temperature</label><br></td>
-                                        <td><input type="number" id="temp" name="temp"></td>
+                                        <td><input type="number" id="temp" name="temp" required></td>
                                     </tr>
 
                                     <tr>
                                         <td><label for="">Gender (0->M 1->F)</label><br></td>
                                         <td>
-                                            <select name="gender">
+                                            <select name="gender" required>
                                                 <option>0</option>
                                                 <option>1</option>
                                             </select>
@@ -224,7 +224,9 @@
                                         <td><input type="checkbox" id="smell" name="smell" value="1"></td>
                                     </tr>
 
-                                    <tr><td><td> <input type="submit" value="Finish Appointment"> <td></td></tr>
+                                    <input name="id_consulta" id="id_consulta" type="hidden" value="'.$consulta[0].'">
+
+                                    <tr><td><td> <input type="submit" value="Proceed with Appointment"> <td></td></tr>
                                 </table>
                             </form>
                         </div>
