@@ -35,9 +35,10 @@
     <style>img {border-radius: 50%;}</style>
 
     <section class="ftco-section">
-    	<div class="container">
+        <div class="container">
+        <h2>Appointment Environment</h2>
+        <br><br>
     		<div class="row d-md-flex">
-    
             <table>
                 <th>Patient info</th>
                 <th>Symptoms</th>
@@ -114,19 +115,116 @@
 
                     <td>
                         <div class="pricing-entry pb-5 text-center">
-                            <form action="change-user.php" method="post">
+                            <form action="finish-app.php" method="post">
                                 <table>
                                     
                                     <tr>
-                                        <td><label for="age"></label><br></td>
+                                        <td><label for="age">Age</label><br></td>
                                         <td><input type="number" id="age" name="age"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="temp">Body Temperature</label><br></td>
+                                        <td><input type="number" id="temp" name="temp"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="">Gender (0->M 1->F)</label><br></td>
+                                        <td>
+                                            <select name="gender">
+                                                <option>0</option>
+                                                <option>1</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                     
                                     <tr>
-                                        <td><label for=""></label><br></td>
-                                        <td><input type="checkbox" id="" name="" value="1"></td>
+                                        <td><label for="cough">Dry Cough</label><br></td>
+                                        <td><input type="checkbox" id="cough" name="cough" value="1"></td>
                                     </tr>
 
+                                    <tr>
+                                        <td><label for="throat">Sore throat</label><br></td>
+                                        <td><input type="checkbox" id="throat" name="throat" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="weakness">Weakness</label><br></td>
+                                        <td><input type="checkbox" id="weakness" name="weakness" value="1"></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><label for="breathing">Breathing problem</label><br></td>
+                                        <td><input type="checkbox" id="breathing" name="breathing" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="drowsiness">Drowsiness</label><br></td>
+                                        <td><input type="checkbox" id="drowsiness" name="drowsiness" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="chest">Pain in chest</label><br></td>
+                                        <td><input type="checkbox" id="chest" name="chest" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="travel">Travel history to infected countries</label><br></td>
+                                        <td><input type="checkbox" id="travel" name="travel" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="diabetes">Diabetes</label><br></td>
+                                        <td><input type="checkbox" id="diabetes" name="diabetes" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="heart">Hearth disease</label><br></td>
+                                        <td><input type="checkbox" id="heart" name="heart" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="lung">Lung disease</label><br></td>
+                                        <td><input type="checkbox" id="lung" name="lung" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="immunity">Stroke or reduced immunity</label><br></td>
+                                        <td><input type="checkbox" id="immunity" name="immunity" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="immunity">Stroke or reduced immunity</label><br></td>
+                                        <td><input type="checkbox" id="immunity" name="immunity" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="progressed">Symptoms progressed</label><br></td>
+                                        <td><input type="checkbox" id="progressed" name="progressed" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="blood">High blood pressue</label><br></td>
+                                        <td><input type="checkbox" id="blood" name="blood" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="kidney">Kidney disease</label><br></td>
+                                        <td><input type="checkbox" id="kidney" name="kidney" value="1"></td>
+                                    </tr>
+
+                                    
+                                    <tr>
+                                        <td><label for="appetide">Change in appetide</label><br></td>
+                                        <td><input type="checkbox" id="appetide" name="appetide" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="smell">Loss of sense of smell</label><br></td>
+                                        <td><input type="checkbox" id="smell" name="smell" value="1"></td>
+                                    </tr>
+
+                                    <tr><td><td> <input type="submit" value="Finish Appointment"> <td></td></tr>
                                 </table>
                             </form>
                         </div>
