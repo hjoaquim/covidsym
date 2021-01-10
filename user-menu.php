@@ -39,6 +39,7 @@
                 </div>
                 <ul>
                     <li><a href="graphs.php">Graphs</a></li>
+                    <li><a href="info-inv.php">Information</a></li>
                     <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>
             </div>'
