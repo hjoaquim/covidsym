@@ -150,7 +150,7 @@
     //$consulta = mysqli_fetch_row($result_consulta);
     mysqli_close($con);
 
-    header('Location: finish-app.php?id_consulta='.$id_consulta.'');
+    header('Location: finish-app.php?id_consulta='.$id_consulta.'&risk='.$class.'');
     exit();
-
+ 
 ?>

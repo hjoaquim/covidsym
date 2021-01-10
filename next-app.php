@@ -15,8 +15,15 @@
     // Try and connect using the info above.
     $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME) or die('Failed to connect to MySQL: ' . mysqli_error($connect));
     $query = "SELECT * FROM diag_consulta where DT_CONSULTA in (SELECT min(DT_CONSULTA) from diag_consulta WHERE  F_MEDICO=".$_SESSION['id']." and CTL_ACTIVO='S')";
-    $result_consulta = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
-    $consulta = mysqli_fetch_row($result_consulta);
+    $result_consulta = @mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
+
+    if(mysqli_num_rows($result_consulta) > 0)
+        $consulta = mysqli_fetch_row($result_consulta);
+
+    else{
+        $message = "No appointments schedualed";
+        echo "<SCRIPT>alert('$message'); window.location.replace('mycovid.php');</SCRIPT>";
+    }
 
     $query = "SELECT * FROM utl_utilizadores where id=".$consulta[2]."";
     $result_paciente = mysqli_query($con, $query) or die('The query failed: ' . mysqli_error($con));
