@@ -33,7 +33,7 @@
                     <p><span class="price">User menu</span>
                 </div>
                 <ul>
-                    <li><a href="">Next appointment</a></li>
+                    <li><a href="next-app.php">Next appointment</a></li>
                     <li><a href="">Appointment history</a></li>
                     <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>
